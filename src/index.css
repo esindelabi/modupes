@@ -57,7 +57,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, #f3e8ff, #fce7f3); 
+    background: linear-gradient(to right, #efe1ff, #f8b8dc); 
 }
 
 .header-content {
@@ -378,8 +378,6 @@ body {
     cursor: not-allowed;
 }
 
-/* ... (autres styles) ... */
-
 /* ------------------ Skills Page ------------------ */
 
 .skills-section {
@@ -393,7 +391,7 @@ body {
 }
 
 .skill-card {
-    background-color: #f9fafb; /* bg-gray-50 */
+    background: #d6becc;
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
