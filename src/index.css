@@ -57,12 +57,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('./assets/img/cover.jpg'), linear-gradient(rgba(235, 123, 123, 0.4), rgba(253, 177, 177, 0.4));
+    background-image: url('./assets/img/cover.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
     background-blend-mode: overlay; 
-    background-color: #ef4a447e;
+    background-color: rgba(240, 46, 120, 0.288);
     color: #1f2937;
 }
 
@@ -231,7 +231,7 @@ body {
 .about-image {
     width: 100%;
     border-radius: 0.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
 }
 
 .social-links {
