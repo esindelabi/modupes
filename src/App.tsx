@@ -1,9 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import About from './components/About';
+import Skills from './components/Skills'; 
 import DesignProjects from './components/DesignProjects';
 import ContactForm from './components/ContactForm';
 import ScrollToHash from './components/ScrollToHash';
@@ -14,6 +15,7 @@ const HomePage: React.FC = () => {
       <ScrollToHash /> 
       <Header />
       <About />
+      <Skills /> 
       <DesignProjects />
       <ContactForm />
     </div>

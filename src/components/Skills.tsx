@@ -40,9 +40,9 @@ const skillData: SkillCategory[] = [
     },
 ];
 
-const SkillsPage: React.FC = () => {
+const Skills: React.FC = () => {
     return (
-        <section className="section skills-section">
+        <section id="skills" className="section skills-section">
             <div className="container">
                 <h2 className="section-title">Mes Compétences Techniques</h2>
                 <div className="skills-grid">
@@ -65,4 +65,4 @@ const SkillsPage: React.FC = () => {
     );
 };
 
-export default SkillsPage;
+export default Skills;
