@@ -20,10 +20,10 @@ const projects: Project[] = [
     },
     { 
         id: 2, 
-        title: "Refonte de Blog Minimaliste", 
-        description: "Optimisation de l'expérience utilisateur et refonte graphique complète d'un blog. Technologies: Vite, TypeScript.", 
-        image: "/src/assets/img/p1.jpg", 
-        link: "https://www.freecodecamp.org/certification/mondukpe_sounton/scientific-computing-with-python-v7",
+        title: "Épopée des rois", 
+        description: "Projet en cours... Jeu video", 
+        image: "/src/assets/img/p1.jpeg", 
+        link: "#",
         isExternal: true
     },
 

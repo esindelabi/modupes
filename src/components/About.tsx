@@ -4,33 +4,24 @@ const About: React.FC = () => {
     return (
         <section id="about" className="section about-section">
             <div className="container">
-                <h2 className="section-title">À propos</h2>
                 <div className="about-content">
                     <div className="about-image-wrapper">
                         <img src="/src/assets/img/profile.png" alt="Portrait" className="about-image" />
                     </div>
                     <div className="about-text">
+                        <h2 className="section-title">À propos</h2>
                         <p className="text-body">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, excepturi quo dignissimos dolorem 
-                            voluptatem debitis minima doloremque rerum, vitae qui hic soluta maiores? 
-                            Vero repudiandae reprehenderit beatae ipsa earum velit.
+                            Créateur passionné, développeur polyvalent
+                            Je transforme des idées en réalités numériques avec ReactJS, 
+                            Python, Rust, Node.js et Flet. Ce qui me motive ? Cette sensation 
+                            unique quand une vision prend vie à l'écran.
                         </p>
                         <p className="text-body">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, excepturi quo dignissimos dolorem 
-                            voluptatem debitis minima doloremque rerum, vitae qui hic soluta maiores? 
-                            Vero repudiandae reprehenderit beatae ipsa earum velit.
+                            Développeur multilingue (français, anglais, fon, notions de chinois), 
+                            j'apporte une approche créative nourrie par mes passions pour le dessin, 
+                            la musique et le bricolage. Chaque ligne de code est pour moi une occasion de créer, 
+                            d'innover et de résoudre des problèmes avec élégance.
                         </p>
-                        <div className="social-links">
-                            <a href="#" className="social-link" aria-label="LinkedIn">
-                                <i className="fab fa-linkedin"></i>
-                            </a>
-                            <a href="#" className="social-link" aria-label="GitHub">
-                                <i className="fab fa-github"></i>
-                            </a>
-                            <a href="#" className="social-link" aria-label="Behance">
-                                <i className="fab fa-behance"></i>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
