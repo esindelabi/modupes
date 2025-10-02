@@ -6,6 +6,10 @@ const Navbar: React.FC = () => {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     const navItems = [
+        // La page "Accueil" est maintenant une ancre vers le haut de la page principale
+        { name: 'Accueil', hash: '/#' }, 
+        // Nouveau lien
+        { name: 'Compétences', hash: '/skills' }, 
         { name: 'À propos', hash: '/#about' },
         { name: 'Design', hash: '/#design' },
         { name: 'Contact', hash: '/#contact' },
