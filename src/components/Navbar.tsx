@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
     const navItems = [
         { name: 'Accueil', hash: '/#' }, 
         { name: 'À propos', hash: '/#about' },
-        { name: 'Compétences', hash: '/#skills' }, // Lien d'ancre
+        { name: 'Compétences', hash: '/#skills' },
         { name: 'Design', hash: '/#design' },
         { name: 'Contact', hash: '/#contact' },
     ];

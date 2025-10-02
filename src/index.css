@@ -57,12 +57,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, #efe1ff, #f8b8dc); 
+    background-image: url('./assets/img/cover.jpg'), linear-gradient(rgba(235, 123, 123, 0.4), rgba(253, 177, 177, 0.4));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    background-blend-mode: overlay; 
+    background-color: #ef4a447e;
+    color: #1f2937;
 }
 
 .header-content {
     text-align: center;
     padding: 1.5rem;
+    color: #1f2937;
+
 }
 
 .header-title {
@@ -74,13 +82,14 @@ body {
 
 .header-subtitle {
     font-size: 1.25rem;
-    color: #4b5563;
     margin-bottom: 2rem;
+    color: #1f2937;
+
 }
 
 .header-description {
     font-size: 1.125rem;
-    color: #4b5563;
+    color: #1f2937;
     max-width: 42rem;
     margin-left: auto;
     margin-right: auto;
@@ -123,11 +132,18 @@ body {
 }
 
 .navbar-logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #1f2937;
     text-decoration: none;
+    transition: color 0.3s;
+
 }
+
+.navbar-logo:hover {
+    color: #d6455d; 
+}
+
 
 .navbar-menu-desktop {
     display: none;
@@ -137,11 +153,13 @@ body {
 .navbar-link {
     color: #4b5563;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 0.25rem;
 }
 
 .navbar-link:hover {
-    color: #1f2937;
+    color: #d6455d;
+    border-bottom: 2px solid #d6455d;
 }
 
 .navbar-toggle-btn {
@@ -154,10 +172,13 @@ body {
 
 .navbar-menu-mobile {
     display: none;
+    background-color: white; 
+
 }
 
 .navbar-menu-mobile.is-open {
     display: block;
+
 }
 
 .navbar-mobile-content {
@@ -169,10 +190,19 @@ body {
 
 .navbar-mobile-link {
     display: block;
-    color: #4b5563;
+    color: #374151;
     text-decoration: none;
     padding: 0.5rem 0;
+    border-left: 3px solid transparent;
+    transition: all 0.3s;
 }
+
+.navbar-mobile-link:hover {
+    color: #d6455d;
+    border-left: 3px solid #d6455d;
+    padding-left: 0.5rem;
+}
+
 
 @media (min-width: 768px) {
     .navbar-menu-desktop {
@@ -382,6 +412,8 @@ body {
 
 .skills-section {
     background-color: white;
+    padding-top: 8rem;
+
 }
 
 .skills-grid {
@@ -391,7 +423,7 @@ body {
 }
 
 .skill-card {
-    background: #d6becc;
+    background: #efe1ff;
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
