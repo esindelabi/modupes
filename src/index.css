@@ -258,7 +258,7 @@ body {
 /* ------------------ Projects ------------------ */
 
 .projects-section {
-    background-color: white;
+    background-color: none;
     padding-top: 8rem;
 
 }
@@ -275,6 +275,7 @@ body {
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     transition: box-shadow 0.3s;
+    padding: 0;
 }
 
 .project-card:hover {
@@ -284,6 +285,7 @@ body {
 .project-image {
     width: 100%;
     height: auto;
+    margin: 0px;
 }
 
 .project-overlay {

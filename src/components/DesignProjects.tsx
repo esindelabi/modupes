@@ -5,7 +5,7 @@ interface Project {
     title: string;
     description: string;
     image: string;
-    link: string; // Lien externe (certificat)
+    link: string; 
     isExternal: boolean;
 }
 
@@ -14,25 +14,33 @@ const projects: Project[] = [
         id: 1, 
         title: "Projet E-commerce Fantaisie", 
         description: "Création d'une interface utilisateur élégante pour une boutique en ligne. Technologies: React, CSS.", 
-        image: "/src/assets/p2.jpg", 
-        link: "#",
-        isExternal: false
+        image: "/src/assets/img/p2.jpg", 
+        link: "https://www.freecodecamp.org/certification/mondukpe_sounton/responsive-web-design",
+        isExternal: true
     },
     { 
         id: 2, 
         title: "Refonte de Blog Minimaliste", 
         description: "Optimisation de l'expérience utilisateur et refonte graphique complète d'un blog. Technologies: Vite, TypeScript.", 
-        image: "/src/assets/p1.jpg", 
-        link: "#",
-        isExternal: false
+        image: "/src/assets/img/p1.jpg", 
+        link: "https://www.freecodecamp.org/certification/mondukpe_sounton/scientific-computing-with-python-v7",
+        isExternal: true
     },
-    // NOUVELLE CARTE : Certifications FreeCodeCamp
+
     {
         id: 3,
         title: "Certifications FreeCodeCamp",
         description: "Attestations de complétion des parcours de Web Design Responsif et Algorithmes JavaScript.",
-        image: "/src/assets/fcc-cert.jpg", // Changez ceci pour une image d'icône FreeCodeCamp ou votre certificat
-        link: "https://www.freecodecamp.org/fcc-user-name-here", // REMPLACEZ PAR VOTRE VÉRITABLE URL DE PROFIL FCC
+        image: "/src/assets/img/cert.png", 
+        link: "https://www.freecodecamp.org/mondukpe_sounton",
+        isExternal: true
+    },
+     {
+        id: 4,
+        title: "TodoApp",
+        description: "Une application pour gérer plus aisément vos tâches.",
+        image: "/src/assets/img/p3.png", 
+        link: "#",
         isExternal: true
     },
 ];
@@ -61,11 +69,10 @@ const DesignProjects: React.FC = () => {
                                     <h3 className="project-title">{project.title}</h3>
                                     <p className="project-description">{project.description}</p>
                                     
-                                    {/* Lien utilisant une balise <a> pour l'externe ou Link pour l'interne */}
                                     <a 
                                         href={project.link} 
                                         className="project-link"
-                                        target={project.isExternal ? "_blank" : "_self"} // Ouvre dans un nouvel onglet si c'est externe
+                                        target={project.isExternal ? "_blank" : "_self"}
                                         rel={project.isExternal ? "noopener noreferrer" : undefined}
                                     >
                                         Voir le projet
