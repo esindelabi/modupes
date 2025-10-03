@@ -14,15 +14,15 @@ const projects: Project[] = [
         id: 1, 
         title: "Projet E-commerce Fantaisie", 
         description: "Création d'une interface utilisateur élégante pour une boutique en ligne. Technologies: React, CSS.", 
-        image: "/src/assets/img/p2.jpg", 
-        link: "https://www.freecodecamp.org/certification/mondukpe_sounton/responsive-web-design",
+        image: "/src/assets/img/p2.png", 
+        link: "#",
         isExternal: true
     },
     { 
         id: 2, 
         title: "Épopée des rois", 
         description: "Projet en cours... Jeu video", 
-        image: "/src/assets/img/p1.jpeg", 
+        image: "/src/assets/img/p1.png", 
         link: "#",
         isExternal: true
     },

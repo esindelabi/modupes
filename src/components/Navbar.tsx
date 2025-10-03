@@ -17,8 +17,12 @@ const Navbar: React.FC = () => {
         <nav className="navbar">
             <div className="container navbar-container">
                 <div className="navbar-header">
-                    <Link to="/#" className="navbar-logo">
-                        Modupe Sounton
+                    <Link to="/#" className="navbar-logo-link">
+                        <img 
+                            src="public/logo.png" 
+                            alt="Logo Modupe Sounton" 
+                            className="navbar-logo-img" 
+                        />
                     </Link>
 
                     <div className="navbar-menu-desktop">

@@ -22,6 +22,7 @@ const About: React.FC = () => {
                             la musique et le bricolage. Chaque ligne de code est pour moi une occasion de créer, 
                             d'innover et de résoudre des problèmes avec élégance.
                         </p>
+                        <p className='text-body'>Développeur junior chez Sikateq.</p>
                     </div>
                 </div>
             </div>
