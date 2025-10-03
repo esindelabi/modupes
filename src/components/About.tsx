@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const About: React.FC = () => {
     return (
@@ -23,6 +24,12 @@ const About: React.FC = () => {
                             d'innover et de résoudre des problèmes avec élégance.
                         </p>
                         <p className='text-body'>Développeur junior chez Sikateq.</p>
+                        <Link 
+                            to="/#contact" 
+                            className="about-button"
+                        >
+                        Me contacter
+                        </Link>
                     </div>
                 </div>
             </div>

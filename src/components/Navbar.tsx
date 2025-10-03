@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
                 <div className="navbar-header">
                     <Link to="/#" className="navbar-logo-link">
                         <img 
-                            src="public/logo.png" 
+                            src="public/logo'.png" 
                             alt="Logo Modupe Sounton" 
                             className="navbar-logo-img" 
                         />

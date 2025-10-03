@@ -68,7 +68,7 @@ body {
     background-position: center;
     background-attachment: fixed; 
     background-blend-mode: overlay; 
-    background-color: rgba(240, 46, 120, 0.288);
+    background-color: rgba(250, 218, 78, 0.651);
     color: #1f2937;
 }
 
@@ -132,8 +132,8 @@ body {
 }
 
 .navbar-logo-img {
-    height: 100px;
-    width: auto;
+    height: 60px;
+    width: 60px;
 }
 
 
@@ -141,11 +141,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 
 .navbar-logo:hover {
-    color: #d6455d; 
+    color: rgb(206, 179, 59); 
 }
 
 
@@ -163,8 +165,8 @@ body {
 }
 
 .navbar-link:hover {
-    color: #d6455d;
-    border-bottom: 2px solid #d6455d;
+    color: rgb(206, 179, 59);
+    border-bottom: 2px solid rgb(206, 179, 59);
 }
 
 .navbar-toggle-btn {
@@ -203,8 +205,8 @@ body {
 }
 
 .navbar-mobile-link:hover {
-    color: #d6455d;
-    border-left: 3px solid #d6455d;
+    color: rgb(206, 179, 59);
+    border-left: 3px solid rgb(206, 179, 59);
     padding-left: 0.5rem;
 }
 
@@ -241,23 +243,25 @@ body {
 .about-image {
     width: 100%;
     border-radius: 0.5rem;
-    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+    box-shadow: rgba(240, 227, 46, 0.4) 0px 5px, rgba(240, 221, 46, 0.3) 0px 10px, rgba(240, 221, 46, 0.2) 0px 15px, rgba(240, 221, 46, 0.1) 0px 20px, rgba(240, 227, 46, 0.05) 0px 25px;
 }
 
-.social-links {
-    display: flex;
-    gap: 1rem;
+.about-button {
+    background-color: rgb(206, 179, 59);
+    color: white;
+    padding: 0.75rem 2rem;
+    margin-top: 8rem;
+    margin-left: 12rem;
+    border-radius: 9999px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
 }
 
-.social-link {
-    color: #4b5563;
-    font-size: 1.5rem;
-    transition: color 0.3s;
+.about-button:hover {
+    background-color: rgba(235, 206, 78, 0.911);
 }
 
-.social-link:hover {
-    color: #1f2937;
-}
 
 @media (min-width: 768px) {
     .about-content {

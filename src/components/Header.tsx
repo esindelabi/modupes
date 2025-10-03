@@ -8,7 +8,7 @@ const Header: React.FC = () => {
                 <h1 className="header-title">Modupe Sounton</h1>
                 <h3 className="header-subtitle">Fullstack Developper</h3>
                 <p className="header-description">
-                    Donner vie à des expériences web uniques.
+                    Donnez vie à des expériences web uniques.
                 </p>
                 <Link 
                     to="/#contact" 
