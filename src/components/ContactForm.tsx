@@ -1,75 +1,110 @@
-import React from 'react';
-import { useForm, type SubmitHandler } from 'react-hook-form';
+import React, { useState } from 'react';
+// Importation du hook Formspree si vous souhaitez une gestion d'état plus avancée
+// Si vous utilisez le Formspree natif, ce n'est pas strictement nécessaire
 
-interface FormData {
-    name: string;
-    email: string;
-    message: string;
-}
+const CONTACT_FORM_ENDPOINT = "VOTRE_URL_FORMSPREE_UNIQUE_ICI"; 
 
 const ContactForm: React.FC = () => {
-    const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormData>();
+    // État pour afficher un message de succès après l'envoi
+    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-    const onSubmit: SubmitHandler<FormData> = async (data) => {
-        console.log("Données du formulaire soumises :", data);
-        await new Promise(resolve => setTimeout(resolve, 1000)); 
-        alert("Merci pour votre message ! Il a été envoyé avec succès (simulation).");
-        reset(); 
+    // Fonction de gestion de la soumission native
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault(); // Empêche le rechargement standard
+        setStatus('idle');
+
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(CONTACT_FORM_ENDPOINT, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                form.reset(); // Vide le formulaire en cas de succès
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            console.error("Erreur lors de l'envoi du formulaire:", error);
+            setStatus('error');
+        }
     };
+
 
     return (
         <section id="contact" className="section contact-section">
             <div className="container">
-                <h2 className="section-title">Me contacter</h2>
+                <h2 className="section-title">Contactez-moi</h2>
                 <div className="contact-form-wrapper">
-                    <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
+                    
+                    {/* MESSAGE DE SUCCÈS OU D'ERREUR */}
+                    {status === 'success' && (
+                        <p className="form-success-message">
+                            ✅ Merci ! Votre message a été envoyé avec succès. Je vous recontacterai rapidement.
+                        </p>
+                    )}
+                    {status === 'error' && (
+                        <p className="form-error-message">
+                            ❌ Une erreur s'est produite. Veuillez réessayer ou m'envoyer un e-mail directement.
+                        </p>
+                    )}
+
+                    {/* Le formulaire utilise maintenant votre endpoint Formspree */}
+                    <form 
+                        className="contact-form" 
+                        action={CONTACT_FORM_ENDPOINT} 
+                        method="POST"
+                        onSubmit={handleSubmit}
+                    >
                         
-                        <div>
+                        <div className="form-group">
                             <label htmlFor="name" className="form-label">Nom</label>
                             <input 
                                 type="text" 
                                 id="name" 
-                                className={`form-input ${errors.name ? 'form-input-error' : ''}`}
-                                {...register("name", { required: "Le nom est requis" })}
+                                name="name" 
+                                className="form-input" 
+                                required 
                             />
-                            {errors.name && <p className="form-error-message">{errors.name.message}</p>}
                         </div>
-                        
-                        <div>
+
+                        <div className="form-group">
                             <label htmlFor="email" className="form-label">Email</label>
                             <input 
                                 type="email" 
                                 id="email" 
-                                className={`form-input ${errors.email ? 'form-input-error' : ''}`}
-                                {...register("email", { 
-                                    required: "L'email est requis", 
-                                    pattern: {
-                                        value: /^\S+@\S+$/i,
-                                        message: "Le format de l'email est invalide"
-                                    }
-                                })}
+                                name="_replyto" // L'attribut Formspree pour l'email de réponse
+                                className="form-input" 
+                                required 
                             />
-                            {errors.email && <p className="form-error-message">{errors.email.message}</p>}
                         </div>
-                        
-                        <div>
+
+                        <div className="form-group">
                             <label htmlFor="message" className="form-label">Message</label>
                             <textarea 
                                 id="message" 
+                                name="message" 
                                 rows={5} 
-                                className={`form-input ${errors.message ? 'form-input-error' : ''}`}
-                                {...register("message", { required: "Le message est requis" })}
+                                className="form-input" 
+                                required
                             ></textarea>
-                            {errors.message && <p className="form-error-message">{errors.message.message}</p>}
                         </div>
                         
                         <button 
                             type="submit" 
-                            className={`form-submit-btn ${isSubmitting ? 'is-submitting' : ''}`}
-                            disabled={isSubmitting}
+                            className="form-submit-btn" 
+                            disabled={status === 'idle' ? false : true}
                         >
-                            {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+                            Envoyer le message
                         </button>
+
                     </form>
                 </div>
             </div>
