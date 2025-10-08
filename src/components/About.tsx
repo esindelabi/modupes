@@ -21,7 +21,7 @@ const About: React.FC = () => {
                             Développeur multilingue (français, anglais, fon, notions de chinois), 
                             j'apporte une approche créative nourrie par mes passions pour le dessin, 
                             la musique et le bricolage. Chaque ligne de code est pour moi une occasion de créer, 
-                            d'innover et de résoudre des problèmes avec élégance.
+                            d'innover et de résoudre des problèmes avec élégance. 
                         </p>
                         <p className='text-body'>Développeur junior chez Sikateq.</p>
                         <Link 

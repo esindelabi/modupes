@@ -118,6 +118,8 @@ body {
 
 /* ------------------ Navbar ------------------ */
 
+/* ------------------ Navbar ------------------ */
+
 .navbar {
     position: fixed;
     width: 100%;
@@ -125,6 +127,8 @@ body {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     z-index: 50;
 }
+
+
 
 .navbar-container {
     padding-top: 0rem;
@@ -152,7 +156,7 @@ body {
 
 
 .navbar-menu-desktop {
-    display: none;
+    display: none; /* [MOBILE FIRST] Masqué par défaut */
     gap: 2rem;
 }
 
@@ -175,6 +179,7 @@ body {
     cursor: pointer;
     color: #4b5563;
     font-size: 1.25rem;
+    display: block; /* [MOBILE FIRST] Affiché par défaut */
 }
 
 .navbar-menu-mobile {
@@ -212,14 +217,13 @@ body {
 
 
 @media (min-width: 768px) {
-    .navbar-menu-desktop {
-        display: flex;
-    }
     .navbar-toggle-btn {
         display: none;
     }
+    .navbar-menu-desktop {
+        display: flex; 
+    }
 }
-
 /* ------------------ About ------------------ */
 
 .about-section {
@@ -238,6 +242,9 @@ body {
 .text-body{
     font-size: 20px;
     font-weight: 400;
+    display: flex;
+    align-items: center;
+    text-align: justify;
 }
 
 .about-image {
