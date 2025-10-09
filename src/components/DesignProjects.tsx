@@ -17,7 +17,7 @@ const projects: Project[] = [
         id: 1, 
         title: "Projet E-commerce Fantaisie", 
         description: "Création d'une interface utilisateur élégante pour une boutique en ligne. Technologies: React, CSS.", 
-        image: projectImage1, 
+        image: projectImage2, 
         link: "#",
         isExternal: true
     },
@@ -25,7 +25,7 @@ const projects: Project[] = [
         id: 2, 
         title: "Épopée des rois", 
         description: "Projet en cours... Jeu video", 
-        image: projectImage2, 
+        image: projectImage1, 
         link: "#",
         isExternal: true
     },
