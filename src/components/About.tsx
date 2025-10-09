@@ -18,7 +18,7 @@ const About: React.FC = () => {
                     <div className="about-text">
                         <h2 className="section-title">À propos</h2>
                         <p className="text-body">
-                            Créateur passionné, développeur polyvalent
+                            Créatrice passionnée, développeur polyvalent.
                             Je transforme des idées en réalités numériques avec ReactJS, 
                             Python, Rust, Node.js et Flet. Ce qui me motive ? Cette sensation 
                             unique quand une vision prend vie à l'écran.
