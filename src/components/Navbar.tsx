@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => setIsOpen(!isOpen);
@@ -13,13 +14,15 @@ const Navbar: React.FC = () => {
         { name: 'Contact', hash: '/#contact' },
     ];
 
+
+
     return (
         <nav className="navbar">
             <div className="container navbar-container">
                 <div className="navbar-header">
                     <Link to="/#" className="navbar-logo-link">
                         <img 
-                            src="public/logo'.png" 
+                            src="/logo.png" 
                             alt="Logo Modupe Sounton" 
                             className="navbar-logo-img" 
                         />

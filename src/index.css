@@ -116,7 +116,8 @@ body {
     background-color: #374151;
 }
 
-/* ------------------ Navbar ------------------ */
+
+
 
 /* ------------------ Navbar ------------------ */
 
@@ -179,7 +180,7 @@ body {
     cursor: pointer;
     color: #4b5563;
     font-size: 1.25rem;
-    display: block; /* [MOBILE FIRST] Affiché par défaut */
+    display: block; 
 }
 
 .navbar-menu-mobile {
@@ -250,7 +251,9 @@ body {
 .about-image {
     width: 100%;
     border-radius: 0.5rem;
-    box-shadow: rgba(240, 227, 46, 0.4) 0px 5px, rgba(240, 221, 46, 0.3) 0px 10px, rgba(240, 221, 46, 0.2) 0px 15px, rgba(240, 221, 46, 0.1) 0px 20px, rgba(240, 227, 46, 0.05) 0px 25px;
+    box-shadow: rgba(240, 227, 46, 0.4) 0px 5px, 
+    rgba(240, 221, 46, 0.3) 0px 10px, rgba(240, 221, 46, 0.2) 0px 15px, 
+    rgba(240, 221, 46, 0.1) 0px 20px, rgba(240, 227, 46, 0.05) 0px 25px;
 }
 
 .about-button {
@@ -274,6 +277,21 @@ body {
     .about-content {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    
+}
+
+@media (max-width: 1826px) {
+    .about-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 10px;
+        border-radius: 8px;
+}
+
+
 }
 
 /* ------------------ Projects ------------------ */
@@ -408,12 +426,20 @@ body {
     color: #ef4444;
     font-size: 0.875rem;
     margin-top: 0.25rem;
+    text-align: center;
+}
+
+.form-success-message{
+    color: green;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    text-align: center;
 }
 
 .form-submit-btn {
     width: 100%;
     color: white;
-    padding: 0.75rem 0;
+    padding: 0.75rem 2rem;
     border-radius: 0.5rem;
     background-color: #1f2937;
     transition: background-color 0.3s;

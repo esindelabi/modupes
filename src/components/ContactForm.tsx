@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
-// Importation du hook Formspree si vous souhaitez une gestion d'état plus avancée
-// Si vous utilisez le Formspree natif, ce n'est pas strictement nécessaire
+import React, { useState, useEffect } from 'react';
 
-const CONTACT_FORM_ENDPOINT = "VOTRE_URL_FORMSPREE_UNIQUE_ICI"; 
+const CONTACT_FORM_ENDPOINT = "https://formspree.io/f/xgvnlrqz"; 
 
 const ContactForm: React.FC = () => {
-    // État pour afficher un message de succès après l'envoi
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-    // Fonction de gestion de la soumission native
+    useEffect(() => {
+        if (status === 'success' || status === 'error') {
+            const timer = setTimeout(() => {
+                setStatus('idle');
+            }, 800);
+
+            return () => clearTimeout(timer);
+        }
+    }, [status]); 
+
+
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault(); // Empêche le rechargement standard
-        setStatus('idle');
+        event.preventDefault(); 
+        setStatus('idle'); 
 
         const form = event.currentTarget;
         const formData = new FormData(form);
@@ -27,7 +34,7 @@ const ContactForm: React.FC = () => {
 
             if (response.ok) {
                 setStatus('success');
-                form.reset(); // Vide le formulaire en cas de succès
+                form.reset(); 
             } else {
                 setStatus('error');
             }
@@ -43,20 +50,7 @@ const ContactForm: React.FC = () => {
             <div className="container">
                 <h2 className="section-title">Contactez-moi</h2>
                 <div className="contact-form-wrapper">
-                    
-                    {/* MESSAGE DE SUCCÈS OU D'ERREUR */}
-                    {status === 'success' && (
-                        <p className="form-success-message">
-                            ✅ Merci ! Votre message a été envoyé avec succès. Je vous recontacterai rapidement.
-                        </p>
-                    )}
-                    {status === 'error' && (
-                        <p className="form-error-message">
-                            ❌ Une erreur s'est produite. Veuillez réessayer ou m'envoyer un e-mail directement.
-                        </p>
-                    )}
 
-                    {/* Le formulaire utilise maintenant votre endpoint Formspree */}
                     <form 
                         className="contact-form" 
                         action={CONTACT_FORM_ENDPOINT} 
@@ -80,7 +74,7 @@ const ContactForm: React.FC = () => {
                             <input 
                                 type="email" 
                                 id="email" 
-                                name="_replyto" // L'attribut Formspree pour l'email de réponse
+                                name="_replyto" 
                                 className="form-input" 
                                 required 
                             />
@@ -106,6 +100,17 @@ const ContactForm: React.FC = () => {
                         </button>
 
                     </form>
+
+                    {status === 'success' && (
+                        <p className="form-success-message">
+                            Merci ! Votre message a été envoyé avec succès. Je vous recontacterai rapidement.
+                        </p>
+                    )}
+                    {status === 'error' && (
+                        <p className="form-error-message">
+                            Une erreur s'est produite. Veuillez réessayer ou m'envoyer un e-mail directement.
+                        </p>
+                    )}
                 </div>
             </div>
         </section>

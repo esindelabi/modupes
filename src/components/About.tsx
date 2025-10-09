@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import aboutMeImage from '../assets/img/profile.png'; 
+
 
 const About: React.FC = () => {
     return (
@@ -7,7 +9,11 @@ const About: React.FC = () => {
             <div className="container">
                 <div className="about-content">
                     <div className="about-image-wrapper">
-                        <img src="/src/assets/img/profile.png" alt="Portrait" className="about-image" />
+                        <img 
+                        src={aboutMeImage} 
+                        alt="Portrait" 
+                        className="about-image" 
+                        />
                     </div>
                     <div className="about-text">
                         <h2 className="section-title">À propos</h2>

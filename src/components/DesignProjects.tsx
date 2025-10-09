@@ -1,7 +1,10 @@
 import React from 'react';
-
+import projectImage1 from '../assets/img/p1.png';
+import projectImage2 from '../assets/img/p2.png';
+import projectImage3 from '../assets/img/cert.png';
+import projectImage4 from '../assets/img/p3.png';
 interface Project {
-    id: number;
+   id: number;
     title: string;
     description: string;
     image: string;
@@ -14,7 +17,7 @@ const projects: Project[] = [
         id: 1, 
         title: "Projet E-commerce Fantaisie", 
         description: "Création d'une interface utilisateur élégante pour une boutique en ligne. Technologies: React, CSS.", 
-        image: "/src/assets/img/p2.png", 
+        image: projectImage1, 
         link: "#",
         isExternal: true
     },
@@ -22,7 +25,7 @@ const projects: Project[] = [
         id: 2, 
         title: "Épopée des rois", 
         description: "Projet en cours... Jeu video", 
-        image: "/src/assets/img/p1.png", 
+        image: projectImage2, 
         link: "#",
         isExternal: true
     },
@@ -31,7 +34,7 @@ const projects: Project[] = [
         id: 3,
         title: "Certifications FreeCodeCamp",
         description: "Attestations de complétion des parcours de Web Design Responsif et Algorithmes JavaScript.",
-        image: "/src/assets/img/cert.png", 
+        image: projectImage3, 
         link: "https://www.freecodecamp.org/mondukpe_sounton",
         isExternal: true
     },
@@ -39,7 +42,7 @@ const projects: Project[] = [
         id: 4,
         title: "TodoApp",
         description: "Une application pour gérer plus aisément vos tâches.",
-        image: "/src/assets/img/p3.png", 
+        image: projectImage4, 
         link: "#",
         isExternal: true
     },
