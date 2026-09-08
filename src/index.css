@@ -106,6 +106,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -158,6 +159,7 @@ a {
    ============================================================ */
 #root {
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .container {
@@ -496,12 +498,15 @@ a {
     background-size: cover;
     background-position: center;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
     max-width: 52rem;
+    width: 100%;
+    overflow-wrap: break-word;
 }
 
 .hero-badge {
@@ -666,6 +671,7 @@ a {
 .about-media {
     position: relative;
     max-width: 30rem;
+    overflow: hidden;
 }
 
 .about-media::before,
@@ -1655,6 +1661,372 @@ textarea.form-input {
 
     .post-detail-body {
         padding: 0 0.25rem;
+    }
+}
+
+/* ============================================================
+   Small mobile adjustments (< 420px) — e.g. Redmi 13C
+   ============================================================ */
+@media (max-width: 420px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .section {
+        padding-top: 2.75rem;
+        padding-bottom: 2.75rem;
+    }
+
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .section-eyebrow {
+        font-size: 0.72rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.6rem, 7vw, 2rem);
+    }
+
+    .section-subtitle {
+        font-size: 0.92rem;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: calc(100vh - 3.75rem);
+        padding: 2.5rem 1rem;
+    }
+
+    .hero-badge {
+        font-size: 0.72rem;
+        padding: 0.35rem 0.85rem;
+        gap: 0.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-badge-dot {
+        width: 0.45rem;
+        height: 0.45rem;
+    }
+
+    .hero-title {
+        margin-bottom: 0.9rem;
+    }
+
+    .hero-role {
+        font-size: 0.82rem;
+        letter-spacing: 0.2em;
+        margin-bottom: 1rem;
+    }
+
+    .hero-description {
+        font-size: 0.92rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-scroll {
+        bottom: 1.25rem;
+        font-size: 0.7rem;
+    }
+
+    .hero-scroll-bar {
+        height: 1.6rem;
+    }
+
+    /* Navbar */
+    .navbar-header {
+        height: 3.75rem;
+    }
+
+    .navbar-logo-img {
+        height: 36px;
+    }
+
+    .theme-toggle,
+    .navbar-toggle-btn {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    .navbar-mobile-inner {
+        padding: 0.75rem 1rem 1.25rem;
+        gap: 0.15rem;
+    }
+
+    .navbar-mobile-link {
+        padding: 0.65rem 0.25rem;
+        font-size: 0.92rem;
+    }
+
+    .main-content-offset {
+        padding-top: 3.75rem;
+    }
+
+    /* About */
+    .about-content {
+        gap: 2rem;
+    }
+
+    .about-badge-float {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.85rem;
+        gap: 0.4rem;
+    }
+
+    .about-badge-icon {
+        width: 1.6rem;
+        height: 1.6rem;
+        font-size: 0.75rem;
+    }
+
+    .text-body {
+        font-size: 0.95rem;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0.85rem;
+        gap: 0.75rem;
+    }
+
+    .about-stat-value {
+        font-size: 1.4rem;
+    }
+
+    .about-stat-label {
+        font-size: 0.7rem;
+    }
+
+    /* Skills */
+    .skill-card {
+        padding: 1.25rem;
+    }
+
+    .skill-card-head {
+        gap: 0.6rem;
+        margin-bottom: 1.1rem;
+    }
+
+    .skill-card-icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        font-size: 1.1rem;
+        border-radius: 0.65rem;
+    }
+
+    .skill-category-title {
+        font-size: 1.05rem;
+    }
+
+    .skill-item {
+        padding: 0.7rem 0;
+    }
+
+    .skill-name {
+        font-size: 0.85rem;
+    }
+
+    .skill-level {
+        font-size: 0.7rem;
+    }
+
+    /* Projects */
+    .project-card {
+        border-radius: 0.85rem;
+    }
+
+    .project-body {
+        padding: 1.1rem 1.15rem 1.25rem;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .project-tag {
+        font-size: 0.68rem;
+        padding: 0.12rem 0.5rem;
+    }
+
+    .project-description {
+        font-size: 0.85rem;
+    }
+
+    .project-link {
+        font-size: 0.85rem;
+        padding: 0.45rem 1rem;
+    }
+
+    .project-badge {
+        font-size: 0.68rem;
+        padding: 0.2rem 0.65rem;
+        top: 0.65rem;
+        left: 0.65rem;
+    }
+
+    /* Contact */
+    .contact-form-wrapper {
+        padding: 1.35rem 1rem;
+        border-radius: 0.85rem;
+    }
+
+    .form-label {
+        font-size: 0.75rem;
+    }
+
+    .form-input {
+        padding: 0.65rem 0.8rem;
+        font-size: 1rem;
+    }
+
+    textarea.form-input {
+        min-height: 7rem;
+    }
+
+    .form-note {
+        font-size: 0.78rem;
+    }
+
+    .form-feedback {
+        font-size: 0.82rem;
+        padding: 0.8rem 1rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        padding: 2rem 0;
+        gap: 1.5rem;
+    }
+
+    .footer-section h4 {
+        font-size: 1.05rem;
+    }
+
+    .footer-section p,
+    .footer-section li {
+        font-size: 0.85rem;
+    }
+
+    .footer-brand-img {
+        height: 2.25rem;
+    }
+
+    .social-icon-footer {
+        width: 2.3rem;
+        height: 2.3rem;
+        font-size: 0.92rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.75rem;
+        padding: 1rem 0;
+    }
+
+    /* Carnet */
+    .carnet-grid {
+        gap: 1.25rem;
+    }
+
+    .post-card {
+        padding: 1.25rem;
+    }
+
+    .post-card-title {
+        font-size: 1.15rem;
+    }
+
+    .post-card-excerpt {
+        font-size: 0.88rem;
+    }
+
+    .post-card-foot {
+        padding-top: 0.8rem;
+    }
+
+    .post-card-link {
+        font-size: 0.85rem;
+    }
+
+    .post-reading {
+        font-size: 0.72rem;
+    }
+
+    /* Post detail */
+    .post-detail-header {
+        margin-bottom: 2rem;
+    }
+
+    .post-detail-back {
+        margin-bottom: 1.5rem;
+        font-size: 0.88rem;
+    }
+
+    .post-detail-meta {
+        font-size: 0.8rem;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .post-detail-title {
+        font-size: 1.4rem;
+    }
+
+    .post-block-para {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .post-block-heading {
+        font-size: 1.25rem;
+        margin: 2rem 0 1rem;
+    }
+
+    .post-block-quote {
+        padding: 1rem 1.25rem;
+        font-size: 1.05rem;
+        margin: 1.5rem 0;
+    }
+
+    .post-detail-body {
+        padding: 0;
+    }
+
+    .post-detail-foot {
+        margin-top: 2rem;
+        padding-top: 1.25rem;
+    }
+
+    .not-found .section-title {
+        font-size: 1.4rem;
+    }
+
+    /* Back to top */
+    .back-to-top {
+        right: 1rem;
+        bottom: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.65rem 1.35rem;
+        font-size: 0.88rem;
+    }
+
+    .btn-primary {
+        padding: 0.7rem 1.5rem;
+    }
+
+    /* Prevent iOS zoom on input focus */
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 16px !important;
     }
 }
 
