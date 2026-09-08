@@ -4,6 +4,7 @@ import projectImage1 from '../assets/img/p1.png';
 import projectImage2 from '../assets/img/p2.png';
 import projectImage3 from '../assets/img/cert.png';
 import projectImage4 from '../assets/img/p3.png';
+import projectImage5 from '../assets/img/estore.webp';
 import Reveal from './Reveal';
 
 interface Project {
@@ -57,6 +58,16 @@ const projects: Project[] = [
         isExternal: true,
         tag: 'Application',
         techs: ['React'],
+    },
+    {
+        id: 5,
+        title: 'Artisans E-Store',
+        description: 'Marketplace multi-vendeurs pour artisans : boutiques, produits, panier et commandes.',
+        image: projectImage5,
+        link: 'https://e-store-phi-one.vercel.app',
+        isExternal: true,
+        tag: 'Full-Stack',
+        techs: ['React', 'Node.js', 'PostgreSQL'],
     },
 ];
 
