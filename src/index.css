@@ -1617,12 +1617,46 @@ textarea.form-input {
         justify-content: center;
     }
 
+    .hero-scroll {
+        display: none;
+    }
+
+    .projects-grid {
+        gap: 2.5rem;
+    }
+
+    .project-media {
+        aspect-ratio: 16 / 9;
+    }
+
     .project-body {
-        padding: 1.5rem 1rem 1.2rem;
+        position: relative;
+        padding: 1.25rem 1rem;
+        background: var(--surface);
+        border-top: 1px solid var(--border);
     }
 
     .project-title {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
+        color: var(--text);
+    }
+
+    .project-description {
+        color: var(--text-muted);
+    }
+
+    .project-tags {
+        margin-bottom: 0.5rem;
+    }
+
+    .project-tag {
+        background: var(--accent-soft);
+        color: var(--accent);
+        border-color: var(--border);
+    }
+
+    .project-link {
+        color: var(--accent);
     }
 
     .contact-form-wrapper {
