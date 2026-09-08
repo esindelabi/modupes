@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modupe Sounton | Fullstack Developper</title>
-    <link rel="icon" type="image/png" href="public/logo'.png" sizes="32x32" />
-    <link rel="shortcut icon" href="public/logo.png" />
-    <link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
-    crossorigin="anonymous" 
-    referrerpolicy="no-referrer" 
-/>
+    <meta name="description" content="Portfolio de Modupe Sounton — développeuse fullstack et designer web. React, Python, Rust, Node.js." />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('theme');
+                var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300..700&display=swap"
+        rel="stylesheet"
+    />
 </head>
 <body>
     <div id="root"></div>

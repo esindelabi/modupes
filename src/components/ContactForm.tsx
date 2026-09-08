@@ -1,24 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { FaCircleCheck, FaCircleExclamation, FaRegPaperPlane } from 'react-icons/fa6';
+import Reveal from './Reveal';
 
-const CONTACT_FORM_ENDPOINT = "https://formspree.io/f/xgvnlrqz"; 
+const CONTACT_FORM_ENDPOINT = 'https://formspree.io/f/xgvnlrqz';
+
+type Status = 'idle' | 'success' | 'error';
 
 const ContactForm: React.FC = () => {
-    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
-    useEffect(() => {
-        if (status === 'success' || status === 'error') {
-            const timer = setTimeout(() => {
-                setStatus('idle');
-            }, 800);
-
-            return () => clearTimeout(timer);
-        }
-    }, [status]); 
-
+    const [status, setStatus] = useState<Status>('idle');
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault(); 
-        setStatus('idle'); 
+        event.preventDefault();
+        setStatus('idle');
 
         const form = event.currentTarget;
         const formData = new FormData(form);
@@ -28,13 +21,13 @@ const ContactForm: React.FC = () => {
                 method: 'POST',
                 body: formData,
                 headers: {
-                    'Accept': 'application/json'
-                }
+                    Accept: 'application/json',
+                },
             });
 
             if (response.ok) {
                 setStatus('success');
-                form.reset(); 
+                form.reset();
             } else {
                 setStatus('error');
             }
@@ -44,74 +37,91 @@ const ContactForm: React.FC = () => {
         }
     };
 
-
     return (
-        <section id="contact" className="section contact-section">
+        <section id="contact" className="section section-lighter contact-section">
             <div className="container">
-                <h2 className="section-title">Contactez-moi</h2>
-                <div className="contact-form-wrapper">
-
-                    <form 
-                        className="contact-form" 
-                        action={CONTACT_FORM_ENDPOINT} 
-                        method="POST"
-                        onSubmit={handleSubmit}
-                    >
-                        
-                        <div className="form-group">
-                            <label htmlFor="name" className="form-label">Nom</label>
-                            <input 
-                                type="text" 
-                                id="name" 
-                                name="name" 
-                                className="form-input" 
-                                required 
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="email" className="form-label">Email</label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="_replyto" 
-                                className="form-input" 
-                                required 
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="message" className="form-label">Message</label>
-                            <textarea 
-                                id="message" 
-                                name="message" 
-                                rows={5} 
-                                className="form-input" 
-                                required
-                            ></textarea>
-                        </div>
-                        
-                        <button 
-                            type="submit" 
-                            className="form-submit-btn" 
-                            disabled={status === 'idle' ? false : true}
-                        >
-                            Envoyer le message
-                        </button>
-
-                    </form>
-
-                    {status === 'success' && (
-                        <p className="form-success-message">
-                            Merci ! Votre message a été envoyé avec succès. Je vous recontacterai rapidement.
-                        </p>
-                    )}
-                    {status === 'error' && (
-                        <p className="form-error-message">
-                            Une erreur s'est produite. Veuillez réessayer ou m'envoyer un e-mail directement.
-                        </p>
-                    )}
+                <div className="section-header">
+                    <span className="section-eyebrow">Contact</span>
+                    <h2 className="section-title">
+                        Contactez-<em>moi</em>
+                    </h2>
+                    <p className="section-subtitle">
+                        Un projet en tête ? Discutons-en — je réponds rapidement.
+                    </p>
                 </div>
+
+                <Reveal>
+                    <div className="contact-form-wrapper">
+                        <form
+                            className="contact-form"
+                            action={CONTACT_FORM_ENDPOINT}
+                            method="POST"
+                            onSubmit={handleSubmit}
+                        >
+                            <div className="form-group">
+                                <label htmlFor="name" className="form-label">
+                                    Nom
+                                </label>
+                                <input type="text" id="name" name="name" className="form-input" placeholder="Votre nom" required />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="email" className="form-label">
+                                    Email
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="_replyto"
+                                    className="form-input"
+                                    placeholder="vous@exemple.com"
+                                    required
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="message" className="form-label">
+                                    Message
+                                </label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows={5}
+                                    className="form-input"
+                                    placeholder="Parlez-moi de votre projet…"
+                                    required
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="btn btn-primary form-submit-btn"
+                                disabled={status !== 'idle'}
+                            >
+                                Envoyer le message
+                                <FaRegPaperPlane />
+                            </button>
+                        </form>
+
+                        <p className="form-note">
+                            Autre préférence ? Écrivez-moi à{' '}
+                            <a href="mailto:esindelabi@gmail.com">esindelabi@gmail.com</a>
+                        </p>
+
+                        {status === 'success' && (
+                            <p className="form-feedback form-feedback-success" role="status">
+                                <FaCircleCheck aria-hidden="true" />
+                                Merci ! Votre message a été envoyé. Je vous recontacterai rapidement.
+                            </p>
+                        )}
+                        {status === 'error' && (
+                            <p className="form-feedback form-feedback-error" role="alert">
+                                <FaCircleExclamation aria-hidden="true" />
+                                Une erreur s'est produite. Veuillez réessayer ou m'écrire directement.
+                            </p>
+                        )}
+                    </div>
+                </Reveal>
             </div>
         </section>
     );

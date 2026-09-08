@@ -1,43 +1,75 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import aboutMeImage from '../assets/img/profile.png'; 
+import { FaArrowRight } from 'react-icons/fa6';
+import { FaBriefcase } from 'react-icons/fa';
+import aboutMeImage from '../assets/img/profile.png';
+import Reveal from './Reveal';
 
+const stats = [
+    { value: '2+', label: 'Années de code' },
+    { value: '4', label: 'Langues parlées' },
+    { value: '6+', label: 'Technologies' },
+    { value: '100%', label: 'Passion' },
+];
 
 const About: React.FC = () => {
     return (
         <section id="about" className="section about-section">
             <div className="container">
-                <div className="about-content">
-                    <div className="about-image-wrapper">
-                        <img 
-                        src={aboutMeImage} 
-                        alt="Portrait" 
-                        className="about-image" 
-                        />
+                <Reveal className="about-content">
+                    <div className="about-media">
+                        <img src={aboutMeImage} alt="Portrait de Modupe Sounton" className="about-image" />
+                        <div className="about-badge-float">
+                            <span className="about-badge-icon">
+                                <FaBriefcase />
+                            </span>
+                            <span>
+                                <strong>Développeuse</strong>
+                                junior @ SIMETRIIK
+                            </span>
+                        </div>
                     </div>
+
                     <div className="about-text">
-                        <h2 className="section-title">À propos</h2>
+                        <div className="section-header">
+                            <span className="section-eyebrow">À propos</span>
+                            <h2 className="section-title">
+                                Créatrice passionnée, développeuse <em>polyvalente</em>
+                            </h2>
+                        </div>
+
                         <p className="text-body">
-                            Créatrice passionnée, développeur polyvalent.
-                            Je transforme des idées en réalités numériques avec ReactJS, 
-                            Python, Rust, Node.js et Flet. Ce qui me motive ? Cette sensation 
-                            unique quand une vision prend vie à l'écran.
+                            Je transforme des idées en réalités numériques avec ReactJS, Python, Rust,
+                            Node.js et Flet. Ce qui me motive ? Cette sensation unique quand une vision
+                            prend vie à l'écran.
                         </p>
                         <p className="text-body">
-                            Développeur multilingue (français, anglais, fon, notions de chinois), 
-                            j'apporte une approche créative nourrie par mes passions pour le dessin, 
-                            la musique et le bricolage. Chaque ligne de code est pour moi une occasion de créer, 
-                            d'innover et de résoudre des problèmes avec élégance. 
+                            Développeuse multilingue (français, anglais, fon, notions de chinois),
+                            j'apporte une approche créative nourrie par mes passions pour le dessin, la
+                            musique et le bricolage. Chaque ligne de code est une occasion de
+                            <strong> créer, innover et résoudre des problèmes avec élégance.</strong>
                         </p>
-                        <p className='text-body'>Développeur junior chez Sikateq.</p>
-                        <Link 
-                            to="/#contact" 
-                            className="about-button"
-                        >
-                        Me contacter
-                        </Link>
+
+                        <div className="about-stats">
+                            {stats.map((stat) => (
+                                <div key={stat.label} className="about-stat">
+                                    <div className="about-stat-value">{stat.value}</div>
+                                    <div className="about-stat-label">{stat.label}</div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="about-actions">
+                            <Link to="/#contact" className="btn btn-primary">
+                                Me contacter
+                                <FaArrowRight />
+                            </Link>
+                            <Link to="/#design" className="btn btn-ghost">
+                                Voir mes projets
+                            </Link>
+                        </div>
                     </div>
-                </div>
+                </Reveal>
             </div>
         </section>
     );
