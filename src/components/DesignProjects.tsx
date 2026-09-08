@@ -80,28 +80,28 @@ const DesignProjects: React.FC = () => {
                             <div className="project-media">
                                 <img src={project.image} alt={project.title} className="project-image" />
                                 <span className="project-badge">{project.tag}</span>
+                            </div>
 
-                                <div className="project-body">
-                                    <h3 className="project-title">{project.title}</h3>
-                                    <div className="project-tags">
-                                        {project.techs.map((tech) => (
-                                            <span key={tech} className="project-tag">
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                    <p className="project-description">{project.description}</p>
-                                    <a
-                                        href={project.link}
-                                        className="project-link"
-                                        target={project.isExternal ? '_blank' : '_self'}
-                                        rel={project.isExternal ? 'noopener noreferrer' : undefined}
-                                        aria-label={`Voir le projet ${project.title}`}
-                                    >
-                                        Voir le projet
-                                        <FaArrowRight />
-                                    </a>
+                            <div className="project-body">
+                                <h3 className="project-title">{project.title}</h3>
+                                <div className="project-tags">
+                                    {project.techs.map((tech) => (
+                                        <span key={tech} className="project-tag">
+                                            {tech}
+                                        </span>
+                                    ))}
                                 </div>
+                                <p className="project-description">{project.description}</p>
+                                <a
+                                    href={project.link}
+                                    className="project-link"
+                                    target={project.isExternal ? '_blank' : '_self'}
+                                    rel={project.isExternal ? 'noopener noreferrer' : undefined}
+                                    aria-label={`Voir le projet ${project.title}`}
+                                >
+                                    Voir le projet
+                                    <FaArrowRight />
+                                </a>
                             </div>
                         </Reveal>
                     ))}
