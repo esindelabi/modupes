@@ -973,20 +973,17 @@ a {
 }
 
 .project-body {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    padding: 2.5rem 1.5rem 1.4rem;
-    background: linear-gradient(to top, rgba(10, 9, 7, 0.92), rgba(10, 9, 7, 0));
+    position: relative;
+    padding: 1.4rem 1.5rem 1.5rem;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
 }
 
 .project-title {
     font-family: var(--font-display);
     font-size: 1.4rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--text);
     margin-bottom: 0.35rem;
 }
 
@@ -1000,15 +997,15 @@ a {
 .project-tag {
     font-size: 0.74rem;
     font-weight: 500;
-    color: #f0e2b8;
-    background: rgba(245, 214, 117, 0.14);
-    border: 1px solid rgba(245, 214, 117, 0.3);
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
     padding: 0.15rem 0.6rem;
     border-radius: 999px;
 }
 
 .project-description {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--text-muted);
     font-size: 0.92rem;
     margin-bottom: 0.9rem;
 }
@@ -1017,7 +1014,7 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
-    color: #f5d675;
+    color: var(--accent);
     font-weight: 600;
     font-size: 0.92rem;
     text-decoration: none;
@@ -1025,7 +1022,7 @@ a {
 }
 
 .project-link:hover {
-    color: #fff;
+    color: var(--accent-strong);
     gap: 0.8rem;
 }
 
@@ -1627,36 +1624,6 @@ textarea.form-input {
 
     .project-media {
         aspect-ratio: 16 / 9;
-    }
-
-    .project-body {
-        position: relative;
-        padding: 1.25rem 1rem;
-        background: var(--surface);
-        border-top: 1px solid var(--border);
-    }
-
-    .project-title {
-        font-size: 1.15rem;
-        color: var(--text);
-    }
-
-    .project-description {
-        color: var(--text-muted);
-    }
-
-    .project-tags {
-        margin-bottom: 0.5rem;
-    }
-
-    .project-tag {
-        background: var(--accent-soft);
-        color: var(--accent);
-        border-color: var(--border);
-    }
-
-    .project-link {
-        color: var(--accent);
     }
 
     .contact-form-wrapper {
