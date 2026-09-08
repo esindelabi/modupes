@@ -578,9 +578,11 @@ a {
 
 .hero-scroll {
     position: absolute;
-    left: 50%;
+    left: 0;
+    right: 0;
     bottom: 2rem;
-    transform: translateX(-50%);
+    margin: 0 auto;
+    width: fit-content;
     color: var(--hero-text-soft);
     text-decoration: none;
     font-size: 0.78rem;
@@ -1612,10 +1614,6 @@ textarea.form-input {
 
     .about-actions {
         justify-content: center;
-    }
-
-    .hero-scroll {
-        display: none;
     }
 
     .projects-grid {
