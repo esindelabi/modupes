@@ -2,7 +2,7 @@ import React from 'react';
 import { FaArrowRight } from 'react-icons/fa6';
 import projectImage1 from '../assets/img/p1.png';
 import projectImage3 from '../assets/img/cert.png';
-import projectImage4 from '../assets/img/p3.png';
+import projectImage4 from '../assets/img/lifeplan.webp';
 import projectImage5 from '../assets/img/estore.webp';
 import Reveal from './Reveal';
 
@@ -50,13 +50,13 @@ const projects: Project[] = [
     },
     {
         id: 4,
-        title: 'TodoApp',
-        description: 'Une application pour gérer plus aisément vos tâches quotidiennes.',
+        title: 'Mon Life Plan',
+        description: 'Application de planification personnelle avec thème watercolor bullet journal.',
         image: projectImage4,
-        link: '#',
+        link: 'https://github.com/esindelabi/applifeplan',
         isExternal: true,
-        tag: 'Application',
-        techs: ['React'],
+        tag: 'Application Desktop',
+        techs: ['Python', 'GTK3'],
     },
 ];
 

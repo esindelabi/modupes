@@ -175,6 +175,7 @@ a {
 
 .content-container {
     background-color: var(--bg);
+    overflow-x: hidden;
 }
 
 .section {
@@ -1541,6 +1542,115 @@ textarea.form-input {
     background: var(--accent);
     color: var(--accent-contrast);
     border-color: var(--accent);
+}
+
+/* ============================================================
+   Mobile adjustments (< 640px)
+   ============================================================ */
+@media (max-width: 640px) {
+    .section {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
+    .hero {
+        padding: 3.5rem 1.25rem;
+    }
+
+    .hero-badge {
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-description {
+        margin-bottom: 1.75rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .about-content {
+        gap: 2.5rem;
+    }
+
+    .about-media {
+        max-width: 100%;
+    }
+
+    .about-media::before,
+    .about-media::after {
+        display: none;
+    }
+
+    .about-badge-float {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-text .section-header {
+        text-align: center;
+    }
+
+    .about-stats {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .about-stat-value {
+        font-size: 1.6rem;
+    }
+
+    .about-actions {
+        justify-content: center;
+    }
+
+    .project-body {
+        padding: 1.5rem 1rem 1.2rem;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.75rem 1.25rem;
+        border-radius: 1rem;
+    }
+
+    .footer-content {
+        padding: 2.5rem 0;
+        gap: 2rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+
+    .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .post-detail-title {
+        font-size: 1.6rem;
+    }
+
+    .post-detail-body {
+        padding: 0 0.25rem;
+    }
 }
 
 /* ============================================================
