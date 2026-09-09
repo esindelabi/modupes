@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaCircleCheck, FaCircleExclamation, FaRegPaperPlane } from 'react-icons/fa6';
 import Reveal from './Reveal';
 
-const CONTACT_FORM_ENDPOINT = 'https://formspree.io/f/xgvnlrqz';
+const CONTACT_FORM_ENDPOINT = '/api/contact';
 
 type Status = 'idle' | 'success' | 'error';
 
@@ -16,12 +16,18 @@ const ContactForm: React.FC = () => {
         const form = event.currentTarget;
         const formData = new FormData(form);
 
+        const payload = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message'),
+        };
+
         try {
             const response = await fetch(CONTACT_FORM_ENDPOINT, {
                 method: 'POST',
-                body: formData,
+                body: JSON.stringify(payload),
                 headers: {
-                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
                 },
             });
 
@@ -72,7 +78,7 @@ const ContactForm: React.FC = () => {
                                 <input
                                     type="email"
                                     id="email"
-                                    name="_replyto"
+                                    name="email"
                                     className="form-input"
                                     placeholder="vous@exemple.com"
                                     required
