@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { FaCircleCheck, FaCircleExclamation, FaRegPaperPlane } from 'react-icons/fa6';
 import Reveal from './Reveal';
 
@@ -8,13 +8,13 @@ type Status = 'idle' | 'success' | 'error';
 
 const ContactForm: React.FC = () => {
     const [status, setStatus] = useState<Status>('idle');
+    const formRef = useRef<HTMLFormElement>(null);
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setStatus('idle');
 
-        const form = event.currentTarget;
-        const formData = new FormData(form);
+        const formData = new FormData(event.currentTarget);
 
         const payload = {
             name: formData.get('name'),
@@ -33,7 +33,10 @@ const ContactForm: React.FC = () => {
 
             if (response.ok) {
                 setStatus('success');
-                form.reset();
+                if (formRef.current) {
+                    formRef.current.reset();
+                }
+                setTimeout(() => setStatus('idle'), 5000);
             } else {
                 setStatus('error');
             }
@@ -59,9 +62,8 @@ const ContactForm: React.FC = () => {
                 <Reveal>
                     <div className="contact-form-wrapper">
                         <form
+                            ref={formRef}
                             className="contact-form"
-                            action={CONTACT_FORM_ENDPOINT}
-                            method="POST"
                             onSubmit={handleSubmit}
                         >
                             <div className="form-group">
